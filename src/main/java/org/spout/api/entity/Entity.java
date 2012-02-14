@@ -103,27 +103,11 @@ public interface Entity extends Datatable, Source {
 	public Pointm getPosition();
 	
 	/**
-	 * Returns a copy of the velocity of this entity. 
-	 * 
-	 * Modifications to this vector will not be reflected without calling {@link #setVelocity(Vector3)}.
-	 * 
-	 * @return velocity vector
-	 */
-	public Vector3m getVelocity();
-	
-	/**
 	 * Sets the position of this entity. Will teleport it to the new position.
 	 * 
 	 * @param p
 	 */
 	public void setPosition(Point p);
-
-	/**
-	 * Sets the velocity of this entity.
-	 * 
-	 * @param v
-	 */
-	public void setVelocity(Vector3 v);
 	
 	/**
 	 * Gets the yaw of this entity.
