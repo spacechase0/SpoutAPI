@@ -71,6 +71,26 @@ public abstract class Block extends Cube {
 	public abstract short setBlockId(short id);
 
 	/**
+	 * Sets the block light for the block to the given value and returns the snapshot value
+	 *
+	 * @param value
+	 * @return the block's block light from the snapshot
+	 */
+	@SnapshotRead
+	@DelayedWrite
+	public abstract int setBlockLight(int value);
+
+	/**
+	 * Sets the sky light for the block to the given value and returns the snapshot value
+	 *
+	 * @param value
+	 * @return the block's sky light from the snapshot
+	 */
+	@SnapshotRead
+	@DelayedWrite
+	public abstract int setSkyLight(int value);
+
+	/**
 	 * Gets the snapshot material for the block
 	 *
 	 * @param x the x coordinate
@@ -93,6 +113,22 @@ public abstract class Block extends Cube {
 	 */
 	@SnapshotRead
 	public abstract short getBlockId();
+
+	/**
+	 * Gets the snapshot block light for the block
+	 *
+	 * @return the block's block light from the snapshot
+	 */
+	@SnapshotRead
+	public abstract int getBlockLight();
+
+	/**
+	 * Gets the snapshot sky light for the block
+	 *
+	 * @return the block's sky light from the snapshot
+	 */
+	@SnapshotRead
+	public abstract int getSkyLight();
 
 	/**
 	 * Gets the live material for the block
@@ -123,4 +159,26 @@ public abstract class Block extends Cube {
 	 */
 	@LiveRead
 	public abstract short getLiveBlockId();
+
+	/**
+	 * Gets the live block light for the block
+	 *
+	 * Note: this may have a negative performance impact, relative to reading
+	 * the snapshot value
+	 * 
+	 * @return the block's block light
+	 */
+	@LiveRead
+	public abstract int getLiveBlockLight();
+
+	/**
+	 * Gets the live sky light for the block
+	 *
+	 * Note: this may have a negative performance impact, relative to reading
+	 * the snapshot value
+	 * 
+	 * @return the block's sky light
+	 */
+	@LiveRead
+	public abstract int getLiveSkyLight();
 }

@@ -52,4 +52,26 @@ public interface BlockData {
 	 */
 	@LiveRead
 	public short getBlockData(int x, int y, int z);
+
+	/**
+	 * Gets the block light for the block at (x, y, z)
+	 *
+	 * @param x the x coordinate
+	 * @param y the y coordinate
+	 * @param z the z coordinate
+	 * @return the block's block light from the snapshot
+	 */
+	@LiveRead
+	public short getBlockLight(int x, int y, int z);
+
+	/**
+	 * Gets the sky light for the block at (x, y, z)
+	 *
+	 * @param x the x coordinate
+	 * @param y the y coordinate
+	 * @param z the z coordinate
+	 * @return the block's sky light from the snapshot
+	 */
+	@LiveRead
+	public short getSkyLight(int x, int y, int z);
 }

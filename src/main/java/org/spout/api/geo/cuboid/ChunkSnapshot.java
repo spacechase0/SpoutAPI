@@ -47,6 +47,10 @@ public abstract class ChunkSnapshot extends Cube implements BlockData {
 	public abstract short[] getBlockIds();
 
 	public abstract short[] getBlockData();
+	
+	public abstract int[] getBlockLight();
+	
+	public abstract int[] getSkyLight();
 
 	/**
 	 * Gets the region that this chunk is located in
